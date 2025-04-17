@@ -2,6 +2,31 @@
 include "connection.php";
 session_start();
 ?>
+<?php if (isset($_GET['error'])): ?>
+	    <p><?php echo $_GET['error']; ?></p>
+<?php endif ?>
+
+<?php
+
+if (!isset($_GET['category'])) {
+    $sql = "SELECT * FROM categories ORDER BY `cat_id` LIMIT 1";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $cat_name = $row['cat_name'];
+        header("Location: index.php?category=" . urlencode($cat_name));
+        ob_end_flush();
+        exit();
+    } else {
+        echo "No categories found.";
+        exit();
+    }
+}
+else{
+    $cat_name = $_GET["category"];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +42,13 @@ session_start();
     <!-- Categories -->
     <div class="category-bar">
       <?php
-        $catResult = $conn->query("SELECT * FROM categories");
+        $catResult = $conn->query("SELECT * FROM categories ORDER BY `cat_name`");
         while($cat = $catResult->fetch_assoc()) {
           echo "<a href='index.php?category=" . urlencode($cat['cat_name']) . "' class='category-button'>" . htmlspecialchars($cat['cat_name']) . "</a>";
         }
       ?>
     </div>
-
+    <h2><?php echo $cat_name ?></h2>
     <!-- Items -->
     <div class="items-list">
       <?php
