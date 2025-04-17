@@ -18,6 +18,5 @@
   .main-logo {
     width: 120px;
     height: auto;
-    margin-bottom: 10px;
   }
 </style>

@@ -2,7 +2,6 @@
 include "connection.php";
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,7 @@ session_start();
   <div class="main-container">
     <?php include "header.php"?>
     <h1>Our Menu</h1>
-
+    <h2>Categories</h2>
     <!-- Categories -->
     <div class="category-bar">
       <?php
