@@ -8,12 +8,12 @@ if ($_SESSION["isAdmin"] != true) {
 }
 
 if (isset($_GET['id'])) {
-    $item_id = $_GET['id'];
+    $cat_id = $_GET['id'];
 
-    $sql = "DELETE FROM items WHERE item_id = '$item_id'";
+    $sql = "DELETE FROM categories WHERE cat_id = '$cat_id'";
 
     if (mysqli_query($conn, $sql)) {
-        echo '<script>window.location.assign("viewitems.php")</script>';
+        echo '<script>window.location.assign("viewcategories.php")</script>';
     } else {
         echo "Error deleting category: " . mysqli_error($conn);
     }

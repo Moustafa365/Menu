@@ -64,7 +64,6 @@
             
             <label for="category">Item Category</label>
             <select name="category" id="category" required>
-                <option value="<?php echo $row["cat_name"] ?>"></option>
                 <?php 
                     $sql = "SELECT * FROM categories";
                     $result = mysqli_query($conn, $sql);

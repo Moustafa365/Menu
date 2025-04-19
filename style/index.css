@@ -39,7 +39,7 @@ body {
   }
   
   .category-button {
-    padding: 25px 25px 25px 25px;
+    padding: 25px ;
     background-color: #2196F3;
     color: white;
     border-radius: 8px;
@@ -49,6 +49,7 @@ body {
     transition: background 0.2s ease;
     font-weight: bold;
     color: black;
+    text-transform: capitalize;
   }
   
   .category-button:hover {
