@@ -5,6 +5,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 40px;
+    padding-bottom: 40px;
   }
   
   .main-container {
@@ -49,7 +50,6 @@ body {
     transition: background 0.2s ease;
     font-weight: bold;
     color: black;
-    text-transform: capitalize;
   }
   
   .category-button:hover {
@@ -102,4 +102,3 @@ body {
     white-space: nowrap;
     padding-left: 10px;
   }
-  
